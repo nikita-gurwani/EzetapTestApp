@@ -1,0 +1,50 @@
+project.ext {
+    jp_compose_version = '1.3.2'
+    retrofit_version = '2.9.0'
+    okhttp_version = '4.9.1'
+    dagger_version = '2.40.5'
+    kotlin_version = '1.6.10'
+    lifecycle_version = '2.4.0'
+}
+ext.tools = [
+        kotlin_version     : "1.6.10",
+        build_tools_version: "31.0.0",
+        compile_sdk_version: 31,
+        target_sdk_version : 31,
+        minSdkVersion      : 24
+]
+
+
+ext.libraries = [
+        core                         : "androidx.core:core-ktx:1.7.0",
+        appcompat_v7                 : "androidx.appcompat:appcompat:1.4.1",
+        material                     : "com.google.android.material:material:1.6.0",
+        kotlin_stdlib                : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version",
+        dagger                       : "com.google.dagger:dagger:$dagger_version",
+        dagger_android               : "com.google.dagger:dagger-android:$dagger_version",
+        dagger_android_support       : "com.google.dagger:dagger-android-support:$dagger_version",
+        gson                         : "com.google.code.gson:gson:2.8.6",
+        logging_interceptor          : "com.squareup.okhttp3:logging-interceptor:$okhttp_version",
+        okhttp3_okhttp               : "com.squareup.okhttp3:okhttp:$okhttp_version",
+        retrofit2                    : "com.squareup.retrofit2:retrofit:$retrofit_version",
+        converter_gson               : "com.squareup.retrofit2:converter-gson:$retrofit_version",
+        kotlin_serialization         : "org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2",
+        kotlin_serialization_retrofit: "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0",
+        dagger_compiler              : "com.google.dagger:dagger-compiler:$dagger_version",
+        dagger_android_processor     : "com.google.dagger:dagger-android-processor:$dagger_version",
+        viewmodel_ktx                : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version",
+        livedata_ktx                 : "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version",
+        runtime_ktx                  : "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version",
+        lifecycle_process            : "androidx.lifecycle:lifecycle-process:$lifecycle_version",
+        lifecycle_compiler           : "androidx.lifecycle:lifecycle-compiler:$lifecycle_version",
+        jp_compose_ui                : "androidx.compose.ui:ui:$jp_compose_version",
+        jp_compose_material          : "androidx.compose.material3:material3:1.1.0-alpha01",
+        jp_compose_ui_preview        : "androidx.compose.ui:ui-tooling-preview:$jp_compose_version",
+        jp_compose_activity          : "androidx.activity:activity-compose:1.3.1",
+        jp_compose_livedata          : "androidx.compose.runtime:runtime-livedata:1.1.0"
+]
+
+ext.app_modules = [
+        rest_sdk: project(':ezetap-rest-sdk')
+]
+

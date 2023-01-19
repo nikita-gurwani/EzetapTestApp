@@ -1,0 +1,61 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id("kotlin-kapt")
+}
+
+apply from: '../dependencies.gradle'
+
+
+android {
+    compileSdk 33
+
+    defaultConfig {
+        minSdk 23
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation libraries.core
+    implementation libraries.material
+    implementation libraries.appcompat_v7
+    implementation libraries.kotlin_stdlib
+    implementation libraries.okhttp3_okhttp
+    implementation libraries.retrofit2
+    implementation libraries.converter_gson
+    implementation libraries.logging_interceptor
+
+    implementation libraries.dagger
+    implementation libraries.dagger_android
+    implementation libraries.dagger_android_support
+
+    implementation libraries.kotlin_serialization
+    implementation libraries.kotlin_serialization_retrofit
+
+    kapt libraries.dagger_compiler
+    kapt libraries.dagger_android_processor
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}
